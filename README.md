@@ -39,3 +39,8 @@ so some manual editing of the ids may be necessary.
 3. introduce pagination to reduce the size of data transfer. 
 4. Current model to get new message is to poll get message by conversationID this would put the service under unnecessary stress:
    would update using a separate lambda function to act as watcher against db and adopt more of a pub/sub model potentially using web hooks.
+   
+###Clean up
+1. perform better Unit testing that actually testing individual units of code.
+2. handle exceptions in a meaningful way for the consumer instead of 500 errors
+3. create a facade server that takes some of the business logic out of the controllers
