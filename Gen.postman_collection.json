@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "9c35b7e6-ab0a-4855-874f-9bdbdee01ead",
+		"name": "Gen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Joe\",\n    \"email\":\"fake@email.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9091/user",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/user/f01860dd-fc51-300f-7060-2bde75ae0945",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"user",
+						"f01860dd-fc51-300f-7060-2bde75ae0945"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send message from one user to Another",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to\": \"f01860f3-6141-51fa-7060-26b020bb31dc\",\n    \"message\": \"this message is the 1st test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9091/user/f0186046-1070-0e54-7060-2694f67ab25c/message/",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"user",
+						"f0186046-1070-0e54-7060-2694f67ab25c",
+						"message",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMessageById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/message/f765a2dd-fc51-300f-7060-2be6cfae0946",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"message",
+						"f765a2dd-fc51-300f-7060-2be6cfae0946"
+					]
+				},
+				"description": "Easier to use the embedded URI"
+			},
+			"response": []
+		},
+		{
+			"name": "Like Message By Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/message/f765a2dd-fc51-300f-7060-2be6cfae0946/like",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"message",
+						"f765a2dd-fc51-300f-7060-2be6cfae0946",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Message By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/message/f765a232-9220-27c7-7060-2b8e212719ed",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"message",
+						"f765a232-9220-27c7-7060-2b8e212719ed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Message By Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"this is an updated message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9091/message/f765a232-9220-27c7-7060-2b8e212719ed",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"message",
+						"f765a232-9220-27c7-7060-2b8e212719ed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Conversation by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/conversation/95942af4-e210-7e15-7060-2b86e33a4ea9",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"conversation",
+						"95942af4-e210-7e15-7060-2b86e33a4ea9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Messages by Conversation Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/messages?conversationId=95942af4-e210-7e15-7060-2b86e33a4ea9",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "conversationId",
+							"value": "95942af4-e210-7e15-7060-2b86e33a4ea9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Conversations with a particular user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9091/conversations?user=f01860f3-6141-51fa-7060-26b020bb31dc",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"conversations"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "f01860f3-6141-51fa-7060-26b020bb31dc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

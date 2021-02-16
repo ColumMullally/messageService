@@ -1,0 +1,13 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:3.2.4
+    container_name: "mongo"
+    ports:
+      - 27017:27017
+  api:
+    image: colum/messagingservice:0.0.1-SNAPSHOT
+    ports:
+      - 9091:8080
+    links:
+      - mongo
